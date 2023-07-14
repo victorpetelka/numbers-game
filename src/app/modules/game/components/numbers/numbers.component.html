@@ -1,0 +1,52 @@
+<div class="text-scores">Scores: <strong>{{gameService.scores}}</strong></div>
+
+<div class="game-container">
+
+
+
+
+
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+      <div class="grid-cell"></div>
+    </div>
+
+    <div class="items">
+      <div *ngFor="let item of gameService.items"
+        class="item" [ngStyle]="getStyles(item)">
+        <div class="item-title">{{item.value}}</div>
+      </div>
+
+
+    </div>
+    <div *ngIf="gameService.theEnd" class="overlay">
+      <div class="overlay-text">THE END</div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<div><button (click)="gameService.resetGame()" class="new-game-button">Start new game</button></div>
